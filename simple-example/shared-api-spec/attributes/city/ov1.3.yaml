@@ -1,0 +1,7 @@
+title: city
+description: Name of the city
+type: string
+maxLength: 255
+example: Halle
+x-object-version: 1.3
+x-object-model: false
