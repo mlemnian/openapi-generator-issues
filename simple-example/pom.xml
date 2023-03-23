@@ -69,7 +69,7 @@
                         <configuration>
                             <generatorName>spring</generatorName>
                             <generateSupportingFiles>false</generateSupportingFiles>
-                            <generateAliasAsModel>true</generateAliasAsModel>
+                            <generateAliasAsModel>false</generateAliasAsModel>
                             <inputSpec>${project.basedir}/open-api.yaml</inputSpec>
                             <modelPackage>api.model</modelPackage>
                             <modelNameSuffix>DTO</modelNameSuffix>
