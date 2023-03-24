@@ -54,6 +54,9 @@ open-api.yaml
 === Positive
 
 * This setup will be rendered correctly in VS Code using 42Crunch.vscode-openapi plugin
+
+image::vs-code.jpg[]
+
 * openapi-generator maven plugin will successfully validate the api
 * openapi-generator maven plugin will create all the files I want
 * redocly lint will successfully validate the api (`npm install && npm test`)
