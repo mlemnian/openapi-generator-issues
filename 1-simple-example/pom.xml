@@ -74,6 +74,7 @@
                             <modelPackage>api.model</modelPackage>
                             <modelNameSuffix>DTO</modelNameSuffix>
                             <apiPackage>api</apiPackage>
+                            <skipValidateSpec>false</skipValidateSpec>
                             <configOptions>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <performBeanValidation>true</performBeanValidation>

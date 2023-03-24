@@ -81,18 +81,9 @@ Errors:
     ...
     at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
 ----
-* if I skip the validation () openapi-generator maven plugin will fail: +
+* if I skip the validation (`<skipValidateSpec>true</skipValidateSpec>`) openapi-generator maven plugin will fail: +
 [source]
 ----
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] --------------------< com.lemnian:backend-service >---------------------
-[INFO] Building backend-service 1.0.0-SNAPSHOT
-[INFO]   from pom.xml
-[INFO] --------------------------------[ jar ]---------------------------------
-[INFO] 
-[INFO] --- clean:3.2.0:clean (default-clean) @ backend-service ---
-[INFO] 
 [INFO] --- openapi-generator:6.4.0:generate (default) @ backend-service ---
 [WARNING] Exception while resolving:
 java.lang.RuntimeException: Unable to load RELATIVE ref: pv1.2 path: /workspaces/openapi-generator-issues/0-simple-example
