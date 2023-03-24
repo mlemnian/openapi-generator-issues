@@ -1,0 +1,29 @@
+title: error_code
+description: Definition of the response error
+type: object
+properties:
+  type:
+    description: Identifies the problem type (e.g. URI) - additional information of the http error
+    type: string
+    example: https://localhost/statuscodes/index.html
+  title:
+    description: Short message that describes the error
+    type: string
+    maxLength: 255
+  status:
+    description: Http status codes of the error
+    type: integer
+    format: int32
+    minimum: 100
+    maximum: 600
+  detail:
+    description: Specific explanation of the occurred problem.
+    type: string
+    maxLength: 255
+required:
+  - type
+  - title
+  - status
+  - detail
+x-object-version: 1.2
+x-object-model: true

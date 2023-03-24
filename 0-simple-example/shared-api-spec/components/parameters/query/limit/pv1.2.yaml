@@ -1,0 +1,12 @@
+name: limit
+in: query
+description: The number of elements per page that are to be retrieved – the default value is 20 and maximum value is 50.
+schema:
+  type: integer
+  format: int32
+  default: 20
+  minimum: 1
+  maximum: 50
+required: false
+x-parameter-version: 1.2
+x-parameter-model: true
