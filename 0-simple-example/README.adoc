@@ -1,7 +1,27 @@
 = Setup
 
-The three parameters are referenced like `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml`
-and the `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml` files are just plain YAMLs:
+There is one open-api.yaml file that references three parameters, a schema and one special attribute.
+
+[source]
+----
+open-api.yaml
+|-- ./shared-api-spec/attributes/city/ov1.3.yaml
+|-- ./shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml
+|-- ./shared-api-spec/components/parameters/query/limit/pv1.2.yaml
+|-- ./shared-api-spec/components/parameters/query/offset/pv1.2.yaml
+`-- ./shared-api-spec/components/schemas/error_code/ov1.2.yaml
+----
+
+The three parameters are referenced like
+
+[source,yaml]
+----
+components:
+  parameters:
+    {PARAMETER_NAME}:
+      $ref: "./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml"
+----
+and the `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml` files are just plain YAMLs e.g.:
 
 [source,yaml]
 ----
@@ -15,15 +35,7 @@ x-parameter-version: 1.2
 x-parameter-model: true
 ----
 
-[source]
-----
-open-api.yaml
-|-- ./shared-api-spec/attributes/city/ov1.3.yaml
-|-- ./shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml
-|-- ./shared-api-spec/components/parameters/query/limit/pv1.2.yaml
-|-- ./shared-api-spec/components/parameters/query/offset/pv1.2.yaml
-`-- ./shared-api-spec/components/schemas/error_code/ov1.2.yaml
-----
+
 
 == Build
 
