@@ -109,20 +109,20 @@ Caused by: java.lang.RuntimeException: Could not find ov1.0 on the classpath
 [WARNING] /workspaces/openapi-generator-issues/example-4/open-api.yaml [0:0]: unexpected error in Open-API generation
 org.openapitools.codegen.SpecValidationException: There were issues with the specification. The option can be disabled via validateSpec (Maven/Gradle) or --skip-validate-spec (CLI).
  | Error count: 1, Warning count: 3
-Errors: 
+Errors:
         -Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-4
-Warnings: 
+Warnings:
         -Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-4
 
     at org.openapitools.codegen.config.CodegenConfigurator.toContext (CodegenConfigurator.java:620)
     ...
     at org.apache.maven.wrapper.MavenWrapperMain.main (MavenWrapperMain.java:73)
-[ERROR] 
+[ERROR]
 org.openapitools.codegen.SpecValidationException: There were issues with the specification. The option can be disabled via validateSpec (Maven/Gradle) or --skip-validate-spec (CLI).
  | Error count: 1, Warning count: 3
-Errors: 
+Errors:
         -Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-4
-Warnings: 
+Warnings:
         -Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-4
 
     at org.openapitools.codegen.config.CodegenConfigurator.toContext (CodegenConfigurator.java:620)
@@ -135,10 +135,10 @@ Warnings:
 [INFO] Finished at: 2023-04-01T11:52:56Z
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.openapitools:openapi-generator-maven-plugin:6.4.0:generate (default) on project backend-service-example-4: Code generation failed. See above for the full exception. -> [Help 1]
-[ERROR] 
+[ERROR]
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
+[ERROR]
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
 ----
@@ -162,9 +162,9 @@ Caused by: java.lang.RuntimeException: Could not find ov1.0 on the classpath
 [WARNING] Failed to get the schema name: ov1.2
 [WARNING] Failed to get the schema name: ov1.2
 [WARNING] There were issues with the specification, but validation has been explicitly disabled.
-Errors: 
+Errors:
         -Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-4
-Warnings: 
+Warnings:
         -Unused model: ov1.0
         -Unused model: stuff_ov1_0
         -Unused model: ov1.2
@@ -176,7 +176,7 @@ Warnings:
 [INFO] ----------------------------------
 [INFO] Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
 [INFO] NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
-[INFO] Invoker Package Name, originally not set, is now derived from api package name: 
+[INFO] Invoker Package Name, originally not set, is now derived from api package name:
 [INFO] Processing operation return_paged_stuff_ov1_0
 [WARNING] Failed to get the schema name: ov1.0
 [WARNING] Failed to get the schema name: ov1.0
@@ -586,33 +586,6 @@ Warnings:
 ----
 creating only `Ov12DTO.java` and `Ov10DTO.java``
 
-
-
-* openapi-generator maven plugin *will create multiple duplicated classes*: +
-see:
-** `./target/generated-sources/openapi/src/main/java/api/model/ErrorCodeOv12DTO.java`
-vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov12DTO.java`
-** `./target/generated-sources/openapi/src/main/java/api/model/PagedStuffOv10DTO.java`
-vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov10DTO.java`
-** `./target/generated-sources/openapi/src/main/java/api/model/StuffOv10DTO.java`
-vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov101DTO.java`
-* some of the classes are not named correctly: +
-|===
-|example-1 |example-2
-|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
-PagedStuffOv10DTO.java +
-StuffOv1AddressDTO.java +
-StuffOv1DTO.java +
-StuffOv1SupplierDTO.java
-|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
-PagedStuffOv10DTO.java (duplicate Ov10DTO.java) +
-StuffOv10AddressDTO.java +
-StuffOv10DTO.java (duplicate Ov101DTO.java) +
-StuffOv10SupplierDTO.java
-|===
-* The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
-It looks like that:
-** every time, there is an external referenced schema in the (base) api file, a duplicated class is generated
-* This setup will *not* be rendered correctly in IntelliJ ultimate
+* This setup will *not* be rendered correctly in IntelliJ ultimate, but at least it will be rendered:
 
 image::intellij-issue.jpg[]
