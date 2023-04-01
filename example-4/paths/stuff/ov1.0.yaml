@@ -1,0 +1,30 @@
+get:
+  tags:
+    - stuff
+  summary: Returns a list of stuff matching the 3 or more character search
+    on partial_name.
+  operationId: return_paged_stuff_ov1_0
+  parameters:
+    - $ref: '../../open-api.yaml#/components/parameters/Authorization'
+    - $ref: '../../open-api.yaml#/components/parameters/limit'
+    - $ref: '../../open-api.yaml#/components/parameters/offset'
+    - $ref: '../../open-api.yaml#/components/parameters/partial_stuff_name'
+  responses:
+    200:
+      $ref: '../../open-api.yaml#/components/responses/paged_stuff'
+    400:
+      $ref: '../../open-api.yaml#/components/responses/400'
+    401:
+      $ref: '../../open-api.yaml#/components/responses/401'
+    403:
+      $ref: '../../open-api.yaml#/components/responses/403'
+    408:
+      $ref: '../../open-api.yaml#/components/responses/408'
+    429:
+      $ref: '../../open-api.yaml#/components/responses/429'
+    500:
+      $ref: '../../open-api.yaml#/components/responses/500'
+    501:
+      $ref: '../../open-api.yaml#/components/responses/501'
+    503:
+      $ref: '../../open-api.yaml#/components/responses/503'
