@@ -77,13 +77,17 @@ Authorization:
 
 === Positive
 
+* openapi-generator maven plugin will successfully validate the api
+* *openapi-generator maven plugin will create all the files I want*
+* redocly lint will successfully validate the api (`npm install && npm test`)
+
+=== Neutral
+
 * This setup will be rendered correctly in VS Code using 42Crunch.vscode-openapi plugin
 
 image::vs-code.jpg[]
 
-* openapi-generator maven plugin will successfully validate the api
-* *openapi-generator maven plugin will create all the files I want*
-* redocly lint will successfully validate the api (`npm install && npm test`)
+even though the schema for "stuff" is not rendered directly.
 
 === Negative
 
@@ -109,8 +113,8 @@ Ov101SupplierDTO.java (missing the title 'Stuff')
 |===
 * The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
 It looks like that:
-** everytime, there is an external referenced schema in the (base) api file, a duplicated class is generated
-** everytime, a transitive external reference needs to be resolved the title of that reference schema is not considered +
+** every time, there is an external referenced schema in the (base) api file, a duplicated class is generated
+** every time, a transitive external reference needs to be resolved the title of that reference schema is not considered +
 * This setup will *not* be rendered correctly in IntelliJ ultimate
 
 image::intellij-issue.jpg[]
