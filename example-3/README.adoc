@@ -77,6 +77,11 @@ Authorization:
 
 === Positive
 
+* This setup will be rendered correctly in VS Code using 42Crunch.vscode-openapi plugin
+
+image::vs-code.jpg[]
+
+* swagger-cli (4.0.4) `npm install -g @apidevtools/swagger-cli` outputs open-api.yaml is valid
 * openapi-generator maven plugin will successfully validate the api
 * *openapi-generator maven plugin will create all the files I want*
 * redocly lint will successfully validate the api (`npm install && npm test`)

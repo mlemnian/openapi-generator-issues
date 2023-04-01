@@ -62,6 +62,7 @@ required: true
 
 image::vs-code.jpg[]
 
+* swagger-cli (4.0.4) `npm install -g @apidevtools/swagger-cli` outputs open-api.yaml is valid
 * redocly lint will successfully validate the api (`npm install && npm test`)
 * swagger-merger 1.5.4 can merge this file correctly (`npm i swagger-merger -g && swagger-merger -i open-api.yaml -o merged.yaml`)
 
@@ -70,7 +71,7 @@ image::vs-code.jpg[]
 * openapi-generator maven plugin will not successfully validate the api: +
 [source]
 ----
-[INFO] --- openapi-generator:6.4.0:generate (default) @ backend-service ---
+[INFO] --- openapi-generator:6.5.0:generate (default) @ backend-service ---
 [WARNING] Exception while resolving:
 java.lang.RuntimeException: Unable to load RELATIVE ref: pv1.2 path: /workspaces/openapi-generator-issues/0-simple-example
     at io.swagger.v3.parser.util.RefUtils.readExternalRef (RefUtils.java:243)
@@ -109,7 +110,7 @@ Errors:
 * if I skip the validation (`<skipValidateSpec>true</skipValidateSpec>`) openapi-generator maven plugin will fail: +
 [source]
 ----
-[INFO] --- openapi-generator:6.4.0:generate (default) @ backend-service ---
+[INFO] --- openapi-generator:6.5.0:generate (default) @ backend-service ---
 [WARNING] Exception while resolving:
 java.lang.RuntimeException: Unable to load RELATIVE ref: pv1.2 path: /workspaces/openapi-generator-issues/0-simple-example
     at io.swagger.v3.parser.util.RefUtils.readExternalRef (RefUtils.java:243)

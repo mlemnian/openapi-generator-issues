@@ -85,6 +85,7 @@ Authorization:
 
 image::vs-code.jpg[]
 
+* swagger-cli (4.0.4) `npm install -g @apidevtools/swagger-cli` outputs open-api.yaml is valid
 * redocly lint will successfully validate the api (`npm install && npm test`)
 
 === Negative
@@ -92,7 +93,7 @@ image::vs-code.jpg[]
 * openapi-generator maven plugin will not successfully validate the api: +
 [source]
 ----
-[INFO] --- openapi-generator:6.4.0:generate (default) @ backend-service-example-5 ---
+[INFO] --- openapi-generator:6.5.0:generate (default) @ backend-service-example-5 ---
 [WARNING] Exception while resolving:
 java.lang.RuntimeException: Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-5
     at io.swagger.v3.parser.util.RefUtils.readExternalRef (RefUtils.java:243)
@@ -134,7 +135,7 @@ Warnings:
 [INFO] Total time:  3.928 s
 [INFO] Finished at: 2023-04-01T11:52:56Z
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.openapitools:openapi-generator-maven-plugin:6.4.0:generate (default) on project backend-service-example-5: Code generation failed. See above for the full exception. -> [Help 1]
+[ERROR] Failed to execute goal org.openapitools:openapi-generator-maven-plugin:6.5.0:generate (default) on project backend-service-example-5: Code generation failed. See above for the full exception. -> [Help 1]
 [ERROR]
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
@@ -147,7 +148,7 @@ Warnings:
 
 [source]
 ----
-[INFO] --- openapi-generator:6.4.0:generate (default) @ backend-service-example-5 ---
+[INFO] --- openapi-generator:6.5.0:generate (default) @ backend-service-example-5 ---
 [WARNING] Exception while resolving:
 java.lang.RuntimeException: Unable to load RELATIVE ref: ov1.0 path: /workspaces/openapi-generator-issues/example-5
     at io.swagger.v3.parser.util.RefUtils.readExternalRef (RefUtils.java:243)

@@ -60,7 +60,7 @@
             <plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>6.4.0</version>
+                <version>6.5.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -74,7 +74,7 @@
                             <modelPackage>api.model</modelPackage>
                             <modelNameSuffix>DTO</modelNameSuffix>
                             <apiPackage>api</apiPackage>
-                            <skipValidateSpec>true</skipValidateSpec>
+                            <skipValidateSpec>false</skipValidateSpec>
                             <configOptions>
                                 <useSpringBoot3>true</useSpringBoot3>
                                 <performBeanValidation>true</performBeanValidation>
