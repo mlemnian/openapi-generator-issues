@@ -1,0 +1,53 @@
+title: stuff
+description: Several information about the stuff according to supplier_id
+type: object
+properties:
+  supplier:
+    type: object
+    properties:
+      id:
+        description: This attribute determines the ID
+        type: string
+        minLength: 9
+        maxLength: 9
+        example: '331184457'
+      stuff_name:
+        description: stuff name of the supplier
+        type: string
+        maxLength: 255
+        example: stuff AG
+  address:
+    type: object
+    properties:
+      city:
+        $ref: '../../../shared-api-spec/attributes/city/ov1.3.yaml'
+      zip:
+        description: Zip code of the city
+        type: string
+        example: '38440'
+      street:
+        description: Street of the address
+        type: string
+        example: main road
+      street2:
+        description: Street number of the address
+        type: string
+        example: '20'
+      po_box:
+        description: Number of post office box
+        type: string
+        example: Postfach 12 54 65
+      po_box_zip:
+        description: Zip code of the post office box
+        type: string
+        example: '38440'
+      state:
+        description: Name of the state (readable text)
+        type: string
+        example: Bayern
+      country_code:
+        description: Country code according to ISO 3166-1 alpha-3
+        type: string
+        example: DEU
+x-object-version: 1.0
+x-object-model: true

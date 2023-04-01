@@ -1,0 +1,26 @@
+title: paged_stuff
+description: Paginated data of multiple stuff according to stuff_name search.
+type: object
+properties:
+  stuff:
+    description: Data of multiple stuff matching the stuff_name search.
+    type: array
+    items:
+      $ref: '../stuff/ov1.0.yaml'
+  offset:
+    description: The index of the page that is to be retrieved (as set in the query or by default).
+    type: integer
+    format: int32
+    example: 0
+  limit:
+    description: The number of elements per page that are to be retrieved (as set in the query or by default).
+    type: integer
+    format: int32
+    example: 100
+  total:
+    description: The total number of items available to be returned.
+    type: integer
+    format: int32
+    example: 1564
+x-object-version: 1.0
+x-object-model: true
