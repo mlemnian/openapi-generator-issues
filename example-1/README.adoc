@@ -17,7 +17,7 @@ open-api.yaml
 |-- $ref: '#/components/parameters/partial_stuff_name'
 |
 |-- $ref: #/components/schemas/paged_stuff_ov1_0
-|   `-- $ref: '#/components/schemas/stuff_ov1'
+|   `-- $ref: '#/components/schemas/stuff_ov1_0'
 |       `-- $ref: './shared-api-spec/attributes/city/ov1.3.yaml'
 |
 `-- $ref: '#/components/schemas/error_code_ov1_2'

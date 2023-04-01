@@ -17,7 +17,7 @@ open-api.yaml
 |-- $ref: '#/components/parameters/partial_stuff_name'
 |
 |-- $ref: #/components/schemas/paged_stuff_ov1_0
-|   `-- $ref: '#/components/schemas/stuff_ov1'
+|   `-- $ref: '#/components/schemas/stuff_ov1_0'
 |       `-- $ref: './shared-api-spec/attributes/city/ov1.3.yaml'
 |
 `-- $ref: '#/components/schemas/error_code_ov1_2'
@@ -138,9 +138,9 @@ Errors:
 [INFO] Environment variable JAVA_POST_PROCESS_FILE not defined so the Java code may not be properly formatted. To define it, try 'export JAVA_POST_PROCESS_FILE="/usr/local/bin/clang-format -i"' (Linux/Mac)
 [INFO] NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
 [INFO] Invoker Package Name, originally not set, is now derived from api package name:
-[INFO] Inline schema created as stuff_ov1_supplier. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mappings in CLI).
-[INFO] Inline schema created as stuff_ov1_address. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mappings in CLI).
-[INFO] Processing operation return_stuff_ov1_0
+[INFO] Inline schema created as stuff_ov1_0_supplier. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mappings in CLI).
+[INFO] Inline schema created as stuff_ov1_0_address. To have complete control of the model name, set the `title` field or use the inlineSchemaNameMapping option (--inline-schema-name-mappings in CLI).
+[INFO] Processing operation return_paged_stuff_ov1_0
 [WARNING] Failed to get the schema name: pv1.2
 [WARNING] Failed to get the schema name: pv1.2
 [WARNING] Failed to get the schema name: pv1.2

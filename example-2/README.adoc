@@ -2,7 +2,7 @@
 
 There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
-But this time the paged_stuff_ov1_0 and stuff_ov1 schemas are also referenced externally:
+But this time the paged_stuff_ov1_0 and stuff_ov1_0 schemas are also referenced externally:
 
 [source]
 ----
