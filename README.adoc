@@ -5,7 +5,7 @@ generating code from a valid OAS 3.0.1 file because of referencing multiple exte
 
 See https://github.com/OpenAPITools/openapi-generator/issues/15104.
 
-The baseline api is the following open-api file from example-0/open-api.yaml:
+The baseline api is the following open-api file from link:./example-0/open-api.yaml[example-0/open-api.yaml]:
 
 [source,yaml]
 ----
