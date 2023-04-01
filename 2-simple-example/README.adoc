@@ -97,7 +97,24 @@ see:
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov12DTO.java`
 ** `./target/generated-sources/openapi/src/main/java/api/model/PagedStuffOv10DTO.java`
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov10DTO.java`
-** 
-* This setup will *not* be rendered correctly in IntelliJ ultimate +
+* some of the classes are not named correctly: +
+|===
+|1-simple-example |2-simple-example
+|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
+PagedStuffOv10DTO.java +
+StuffOv1AddressDTO.java +
+StuffOv1DTO.java +
+StuffOv1SupplierDTO.java
+|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
+PagedStuffOv10DTO.java (duplicate Ov10DTO.java) +
+Ov101AddressDTO.java (missing the title 'Stuff') +
+Ov101DTO.java (missing the title 'Stuff') +
+Ov101SupplierDTO.java (missing the title 'Stuff')
+|===
+* The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
+It looks like that:
+** everytime, there is an external referenced schema in the (base) api file, a duplicated class is generated
+** everytime, a transitive external reference needs to be resolved the title of that reference schema is not considered +
+* This setup will *not* be rendered correctly in IntelliJ ultimate
 
 image::intellij-issue.jpg[]
