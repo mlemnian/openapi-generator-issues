@@ -18,16 +18,16 @@ open-api.yaml
 |
 |-- $ref: '#/components/parameters/partial_stuff_name'
 |
-|-- $ref: #/components/schemas/paged_stuff_ov1_0
+|-- $ref: '#/components/schemas/paged_stuff_ov1_0'
 |   `-- $ref: './components/schemas/paged_stuff/ov1.0.yaml'
 |       `-- $ref: '../../../open-api.yaml#/components/schemas/stuff_ov1_0'
 |
-|-- $ref: #/components/schemas/stuff_ov1_0
+|-- $ref: '#/components/schemas/stuff_ov1_0'
 |   `-- $ref: '../stuff/ov1.0.yaml'
 |       `-- $ref: '../../../shared-api-spec/attributes/city/ov1.3.yaml'
 |
 `-- $ref: '#/components/schemas/error_code_ov1_2'
-    `-- $ref: ./shared-api-spec/components/schemas/error_code/ov1.2.yaml
+    `-- $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
 ----
 
 The three parameters are referenced like in example 1:
