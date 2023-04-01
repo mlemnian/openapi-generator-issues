@@ -91,9 +91,13 @@ image::vs-code.jpg[]
 
 === Negative
 
-* openapi-generator maven plugin *will create a duplicated class*:
-see `./target/generated-sources/openapi/src/main/java/api/model/ErrorCodeOv12DTO.java`
+* openapi-generator maven plugin *will create multiple duplicated classes*: +
+see:
+** `./target/generated-sources/openapi/src/main/java/api/model/ErrorCodeOv12DTO.java`
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov12DTO.java`
+** `./target/generated-sources/openapi/src/main/java/api/model/PagedStuffOv10DTO.java`
+vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov10DTO.java`
+** 
 * This setup will *not* be rendered correctly in IntelliJ ultimate +
 
 image::intellij-issue.jpg[]

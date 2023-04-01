@@ -1,5 +1,5 @@
 title: stuff
-description: Several information about the stuff according to supplier_id
+description: Several information about the stuff according to stuff_id
 type: object
 properties:
   supplier:
