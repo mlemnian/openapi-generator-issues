@@ -25,10 +25,6 @@ image::vs-code.jpg[]
 * openapi-generator maven plugin will successfully validate the api
 * openapi-generator maven plugin will create all the files I want
 * redocly lint will successfully validate the api (`npm install && npm test`)
+* This setup will be rendered correctly in IntelliJ ultimate +
 
-
-=== Negative
-
-* This setup will not be rendered correctly in IntelliJ ultimate +
-
-image::intellij-issue.jpg[]
+image::intellij-fine.jpg[]
