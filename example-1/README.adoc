@@ -2,8 +2,6 @@
 
 There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
-But this time the paged_suff_ov1_0 and stuff_ov1 schemas are also referenced externally:
-
 [source]
 ----
 open-api.yaml
@@ -18,10 +16,9 @@ open-api.yaml
 |
 |-- $ref: "#/components/parameters/partial_stuff_name"
 |
-|-- $ref: #/components/schemas/paged_suff_ov1_0
-|   `-- $ref: './components/schemas/paged_stuff/ov1.0.yaml'
-|       `-- $ref: '../stuff/ov1.0.yaml"
-|           `-- $ref: "../../../shared-api-spec/attributes/city/ov1.3.yaml"
+|-- $ref: #/components/schemas/paged_stuff_ov1_0
+|   `-- $ref: "#/components/schemas/stuff_ov1"
+|       `-- $ref: "./shared-api-spec/attributes/city/ov1.3.yaml"
 |
 `-- $ref: "#/components/schemas/error_code_ov1_2"
     `-- $ref: ./shared-api-spec/components/schemas/error_code/ov1.2.yaml
@@ -41,7 +38,7 @@ and the `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.y
 
 [cols="1a,1a"]
 |===
-|0-simple-example |1-simple-example
+|example-0 |example-1
 
 |[source,yaml]
 ----
@@ -91,30 +88,9 @@ image::vs-code.jpg[]
 
 === Negative
 
-* openapi-generator maven plugin *will create multiple duplicated classes*: +
-see:
-** `./target/generated-sources/openapi/src/main/java/api/model/ErrorCodeOv12DTO.java`
+* openapi-generator maven plugin *will create a duplicated class*:
+see `./target/generated-sources/openapi/src/main/java/api/model/ErrorCodeOv12DTO.java`
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov12DTO.java`
-** `./target/generated-sources/openapi/src/main/java/api/model/PagedStuffOv10DTO.java`
-vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov10DTO.java`
-* some of the classes are not named correctly: +
-|===
-|1-simple-example |2-simple-example
-|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
-PagedStuffOv10DTO.java +
-StuffOv1AddressDTO.java +
-StuffOv1DTO.java +
-StuffOv1SupplierDTO.java
-|ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
-PagedStuffOv10DTO.java (duplicate Ov10DTO.java) +
-Ov101AddressDTO.java (missing the title 'Stuff') +
-Ov101DTO.java (missing the title 'Stuff') +
-Ov101SupplierDTO.java (missing the title 'Stuff')
-|===
-* The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
-It looks like that:
-** everytime, there is an external referenced schema in the (base) api file, a duplicated class is generated
-** everytime, a transitive external reference needs to be resolved the title of that reference schema is not considered +
-* This setup will *not* be rendered correctly in IntelliJ ultimate
+* This setup will *not* be rendered correctly in IntelliJ ultimate +
 
 image::intellij-issue.jpg[]
