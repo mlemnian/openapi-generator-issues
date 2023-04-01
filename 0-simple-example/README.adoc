@@ -1,6 +1,6 @@
 = Setup
 
-There is one open-api.yaml file that references three parameters, two schemas and one special attribute.
+There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
 [source]
 ----
@@ -15,6 +15,8 @@ open-api.yaml
 |   `-- $ref: "./shared-api-spec/components/parameters/query/offset/pv1.2.yaml"
 |
 |-- $ref: "#/components/parameters/partial_stuff_name"
+|
+|-- $ref: #/components/schemas/paged_stuff_ov1_0
 |   `-- $ref: "#/components/schemas/stuff_ov1"
 |       `-- $ref: "./shared-api-spec/attributes/city/ov1.3.yaml"
 |

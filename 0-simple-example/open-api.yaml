@@ -60,7 +60,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/paged_suff_ov1_0'
+            $ref: '#/components/schemas/paged_stuff_ov1_0'
     400:
       description: |
         Bad Request - The 400 (Bad Request) status code.
@@ -118,7 +118,7 @@ components:
           schema:
             $ref: '#/components/schemas/error_code_ov1_2'
   schemas:
-    paged_suff_ov1_0:
+    paged_stuff_ov1_0:
       title: paged_stuff
       description: Paginated data of multiple stuff according to stuff_name search.
       type: object
