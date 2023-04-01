@@ -2,7 +2,7 @@
 
 There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
-But this time the paged_suff_ov1_0 and stuff_ov1 schemas are also referenced externally:
+But this time the paged_stuff_ov1_0 and stuff_ov1 schemas are also referenced externally:
 
 [source]
 ----
@@ -18,7 +18,7 @@ open-api.yaml
 |
 |-- $ref: '#/components/parameters/partial_stuff_name'
 |
-|-- $ref: #/components/schemas/paged_suff_ov1_0
+|-- $ref: #/components/schemas/paged_stuff_ov1_0
 |   `-- $ref: './components/schemas/paged_stuff/ov1.0.yaml'
 |       `-- $ref: '../stuff/ov1.0.yaml'
 |           `-- $ref: '../../../shared-api-spec/attributes/city/ov1.3.yaml'
