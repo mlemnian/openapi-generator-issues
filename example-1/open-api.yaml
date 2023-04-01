@@ -20,7 +20,7 @@ paths:
         - stuff
       summary: Returns a list of stuff matching the 3 or more character search
         on partial_name.
-      operationId: return_stuff_ov1_0
+      operationId: return_paged_stuff_ov1_0
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/limit'
@@ -192,11 +192,11 @@ components:
       $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
   parameters:
     Authorization:
-      $ref: './shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml#/Authorization'
+      $ref: './shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml'
     offset:
-      $ref: './shared-api-spec/components/parameters/query/offset/pv1.2.yaml#/offset'
+      $ref: './shared-api-spec/components/parameters/query/offset/pv1.2.yaml'
     limit:
-      $ref: './shared-api-spec/components/parameters/query/limit/pv1.2.yaml#/limit'
+      $ref: './shared-api-spec/components/parameters/query/limit/pv1.2.yaml'
     partial_stuff_name:
       name: partial_stuff_name
       in: query

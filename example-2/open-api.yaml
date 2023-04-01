@@ -20,7 +20,7 @@ paths:
         - stuff
       summary: Returns a list of stuff matching the 3 or more character search
         on partial_name.
-      operationId: return_paged_stuff_ov1_0
+      operationId: return_stuff_ov1_0
       parameters:
         - $ref: '#/components/parameters/Authorization'
         - $ref: '#/components/parameters/limit'
@@ -112,7 +112,82 @@ components:
             $ref: '#/components/schemas/error_code_ov1_2'
   schemas:
     paged_stuff_ov1_0:
-      $ref: './components/schemas/paged_stuff/ov1.0.yaml'
+      title: paged_stuff
+      description: Paginated data of multiple stuff according to stuff_name search.
+      type: object
+      properties:
+        stuff:
+          description: Data of multiple stuff matching the stuff_name search.
+          type: array
+          items:
+            $ref: '#/components/schemas/stuff_ov1_0'
+        offset:
+          description: The index of the page that is to be retrieved (as set in the query or by default).
+          type: integer
+          format: int32
+          example: 0
+        limit:
+          description: The number of elements per page that are to be retrieved (as set in the query or by default).
+          type: integer
+          format: int32
+          example: 100
+        total:
+          description: The total number of items available to be returned.
+          type: integer
+          format: int32
+          example: 1564
+    stuff_ov1_0:
+      title: stuff
+      description: Several information about the stuff according to stuff_id
+      type: object
+      properties:
+        supplier:
+          type: object
+          properties:
+            id:
+              description: This attribute determines the ID
+              type: string
+              minLength: 9
+              maxLength: 9
+              example: '331184457'
+            stuff_name:
+              description: stuff name of the supplier
+              type: string
+              maxLength: 255
+              example: stuff AG
+        address:
+          type: object
+          properties:
+            city:
+              $ref: './shared-api-spec/attributes/city/ov1.3.yaml'
+            zip:
+              description: Zip code of the city
+              type: string
+              example: '38440'
+            street:
+              description: Street of the address
+              type: string
+              example: main road
+            street2:
+              description: Street number of the address
+              type: string
+              example: '20'
+            po_box:
+              description: Number of post office box
+              type: string
+              example: Postfach 12 54 65
+            po_box_zip:
+              description: Zip code of the post office box
+              type: string
+              example: '38440'
+            state:
+              description: Name of the state (readable text)
+              type: string
+              example: Bayern
+            country_code:
+              description: Country code according to ISO 3166-1 alpha-3
+              type: string
+              example: DEU
     error_code_ov1_2:
       $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
   parameters:

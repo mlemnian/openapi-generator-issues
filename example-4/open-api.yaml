@@ -15,7 +15,36 @@ security:
   - bearer: []
 paths:
   /v1.0/stuff:
-    $ref: './paths/stuff/ov1.0.yaml'
+    get:
+      tags:
+        - stuff
+      summary: Returns a list of stuff matching the 3 or more character search
+        on partial_name.
+      operationId: return_paged_stuff_ov1_0
+      parameters:
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/partial_stuff_name'
+      responses:
+        200:
+          $ref: '#/components/responses/paged_stuff'
+        400:
+          $ref: '#/components/responses/400'
+        401:
+          $ref: '#/components/responses/401'
+        403:
+          $ref: '#/components/responses/403'
+        408:
+          $ref: '#/components/responses/408'
+        429:
+          $ref: '#/components/responses/429'
+        500:
+          $ref: '#/components/responses/500'
+        501:
+          $ref: '#/components/responses/501'
+        503:
+          $ref: '#/components/responses/503'
 components:
   responses:
     paged_stuff:

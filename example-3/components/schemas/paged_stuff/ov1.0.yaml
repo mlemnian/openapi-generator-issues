@@ -6,7 +6,7 @@ properties:
     description: Data of multiple stuff matching the stuff_name search.
     type: array
     items:
-      $ref: '../../../open-api.yaml#/components/schemas/stuff_ov1_0'
+      $ref: '../stuff/ov1.0.yaml'
   offset:
     description: The index of the page that is to be retrieved (as set in the query or by default).
     type: integer

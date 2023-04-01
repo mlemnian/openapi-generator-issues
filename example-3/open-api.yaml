@@ -113,8 +113,6 @@ components:
   schemas:
     paged_stuff_ov1_0:
       $ref: './components/schemas/paged_stuff/ov1.0.yaml'
-    stuff_ov1_0:
-      $ref: './components/schemas/stuff/ov1.0.yaml'
     error_code_ov1_2:
       $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
   parameters:

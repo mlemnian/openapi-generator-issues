@@ -2,7 +2,7 @@
 
 There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
-But this time the paged_stuff_ov1_0 and stuff_ov1_0 schemas are also referenced externally:
+But this time the paged_stuff_ov1_0 (and indirectly stuff_ov1_0) schema is also referenced externally:
 
 [source]
 ----
@@ -20,16 +20,14 @@ open-api.yaml
 |
 |-- $ref: '#/components/schemas/paged_stuff_ov1_0'
 |   `-- $ref: './components/schemas/paged_stuff/ov1.0.yaml'
-|       `-- $ref: '../../../open-api.yaml#/components/schemas/stuff_ov1_0'
-|
-|-- $ref: '../stuff/ov1.0.yaml'
-|   `-- $ref: '../../../shared-api-spec/attributes/city/ov1.3.yaml'
+|       `-- $ref: '../stuff/ov1.0.yaml'
+|           `-- $ref: '../../../shared-api-spec/attributes/city/ov1.3.yaml'
 |
 `-- $ref: '#/components/schemas/error_code_ov1_2'
     `-- $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
 ----
 
-The three parameters are referenced like in example 1:
+The three parameters are referenced like in example-2:
 
 [source,yaml]
 ----
@@ -43,7 +41,7 @@ and the `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.y
 
 [cols="1a,1a"]
 |===
-|0-simple-example |1-simple-example
+|example-1 |example-2
 
 |[source,yaml]
 ----
@@ -79,13 +77,17 @@ Authorization:
 
 === Positive
 
+* openapi-generator maven plugin will successfully validate the api
+* *openapi-generator maven plugin will create all the files I want*
+* redocly lint will successfully validate the api (`npm install && npm test`)
+
+=== Neutral
+
 * This setup will be rendered correctly in VS Code using 42Crunch.vscode-openapi plugin
 
 image::vs-code.jpg[]
 
-* openapi-generator maven plugin will successfully validate the api
-* *openapi-generator maven plugin will create all the files I want*
-* redocly lint will successfully validate the api (`npm install && npm test`)
+even though the schema for "stuff" is not rendered directly. This minor issue will be addressed in the example-3.
 
 === Negative
 
@@ -95,8 +97,6 @@ see:
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov12DTO.java`
 ** `./target/generated-sources/openapi/src/main/java/api/model/PagedStuffOv10DTO.java`
 vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov10DTO.java`
-** `./target/generated-sources/openapi/src/main/java/api/model/StuffOv10DTO.java`
-vs. `./target/generated-sources/openapi/src/main/java/api/model/Ov101DTO.java`
 * some of the classes are not named correctly: +
 |===
 |example-1 |example-2
@@ -107,13 +107,14 @@ StuffOv1DTO.java +
 StuffOv1SupplierDTO.java
 |ErrorCodeOv12DTO.java (duplicate Ov12DTO.java) +
 PagedStuffOv10DTO.java (duplicate Ov10DTO.java) +
-StuffOv10AddressDTO.java +
-StuffOv10DTO.java (duplicate Ov101DTO.java) +
-StuffOv10SupplierDTO.java
+Ov101AddressDTO.java (missing the title 'Stuff') +
+Ov101DTO.java (missing the title 'Stuff') +
+Ov101SupplierDTO.java (missing the title 'Stuff')
 |===
 * The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
 It looks like that:
 ** every time, there is an external referenced schema in the (base) api file, a duplicated class is generated
+** every time, a transitive external reference needs to be resolved the title of that reference schema is not considered
 * This setup will *not* be rendered correctly in IntelliJ ultimate
 
 image::intellij-issue.jpg[]

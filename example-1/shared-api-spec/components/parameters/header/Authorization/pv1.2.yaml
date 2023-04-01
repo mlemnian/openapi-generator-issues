@@ -1,7 +1,6 @@
-Authorization:
-  name: Authorization
-  in: header
-  description: Bearer Authorization Token
-  schema:
-    type: string
-  required: true
+name: Authorization
+in: header
+description: Bearer Authorization Token
+schema:
+  type: string
+required: true

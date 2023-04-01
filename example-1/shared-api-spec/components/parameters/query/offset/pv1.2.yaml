@@ -1,12 +1,11 @@
-offset:
-  name: offset
-  in: query
-  description: The index of page that is to be retrieved – the parameter is zero-indexed and its default value is 0.
-  schema:
-    type: integer
-    format: int32
-    default: 0
-    minimum: 0
-  required: false
-  style: form
-  explode: false
+name: offset
+in: query
+description: The index of page that is to be retrieved – the parameter is zero-indexed and its default value is 0.
+schema:
+  type: integer
+  format: int32
+  default: 0
+  minimum: 0
+required: false
+style: form
+explode: false

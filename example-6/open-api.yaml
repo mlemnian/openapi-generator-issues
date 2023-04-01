@@ -1,0 +1,60 @@
+openapi: 3.0.1
+info:
+  license:
+    name: Apache License Version 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.txt
+  title: Swagger API Definition - backend-service - v1
+  description: |
+    Provides API Services for the integration of backend-service Endpoints (v1)
+
+    <a href="../index.html"><font size=5>Home</font></a>
+  version: v1.0
+servers:
+  - url: https://localhost/services
+security:
+  - bearer: []
+paths:
+  /v1.0/stuff:
+    $ref: './paths/stuff/ov1.0.yaml'
+components:
+  responses:
+    paged_stuff:
+      description: Data of multiple stuffs has been returned successfully (arranged
+        alphabetically by stuff name in ascending order).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/paged_stuff_ov1_1'
+    400:
+      description: |
+        Bad Request - The 400 (Bad Request) status code.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/error_code_ov1_3'
+  schemas:
+    paged_stuff_ov1_1:
+      $ref: './components/schemas/paged_stuff/ov1.1.yaml'
+    stuff_ov1_2:
+      $ref: './components/schemas/stuff/ov1.2.yaml'
+    error_code_ov1_3:
+      $ref: './shared-api-spec/components/schemas/error_code/ov1.3.yaml'
+  parameters:
+    partial_stuff_name:
+      name: partial_stuff_name
+      in: query
+      description: A fragment of the stuff's name of the stuff to search for
+        (matches the stuff's name against entered search string of 3
+        or more characters).
+      required: true
+      schema:
+        maxLength: 255
+        minLength: 3
+        pattern: ^[^<>/\\%$&\[\];=]+$
+        type: string
+  securitySchemes:
+    bearer:
+      type: apiKey
+      description: The Bearer authentication scheme
+      name: Authorization
+      in: header
