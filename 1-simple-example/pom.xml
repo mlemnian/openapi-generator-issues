@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.lemnian</groupId>
-    <artifactId>backend-service</artifactId>
+    <artifactId>backend-service-1-simple-axample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>backend-service</name>
+    <name>backend-service-1-simple-axample</name>
 
     <properties>
         <maven.install.skip>true</maven.install.skip>
