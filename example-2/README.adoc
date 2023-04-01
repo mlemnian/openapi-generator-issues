@@ -2,7 +2,7 @@
 
 There is one open-api.yaml file that references four parameters, two schemas and one special attribute.
 
-But this time the paged_stuff_ov1_0 and stuff_ov1_0 schemas are also referenced externally:
+But this time the paged_stuff_ov1_0 (and indirectly stuff_ov1_0) schema is also referenced externally:
 
 [source]
 ----
@@ -114,7 +114,7 @@ Ov101SupplierDTO.java (missing the title 'Stuff')
 * The name `Ov101DTO` is used here because the duplicate for `PagedStuffOv10DTO` is already named `Ov10DTO`. +
 It looks like that:
 ** every time, there is an external referenced schema in the (base) api file, a duplicated class is generated
-** every time, a transitive external reference needs to be resolved the title of that reference schema is not considered +
+** every time, a transitive external reference needs to be resolved the title of that reference schema is not considered
 * This setup will *not* be rendered correctly in IntelliJ ultimate
 
 image::intellij-issue.jpg[]
