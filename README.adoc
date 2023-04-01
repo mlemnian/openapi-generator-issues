@@ -23,3 +23,18 @@ The following example apis should create exactly the same result:
 `example-3` only defines `#/components/schemas/paged_stuff_ov1_0` and `#/components/schemas/stuff_ov1_0` inline.
 
 `example-6` is a more simplified version of `example-5` to make debugging easier.
+
+== How to build
+
+[source,bash]
+----
+./mvnw -fae compile
+----
+
+=== Build failures
+
+The following examples fail to build, even though the API is correct:
+
+* example-1
+* example-5
+* example-6
