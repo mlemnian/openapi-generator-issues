@@ -10,5 +10,3 @@ offset:
   required: false
   style: form
   explode: false
-  x-parameter-version: 1.2
-  x-parameter-model: true

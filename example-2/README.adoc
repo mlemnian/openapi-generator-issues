@@ -51,8 +51,6 @@ description: Bearer Authorization Token
 schema:
   type: string
 required: true
-x-parameter-version: 1.2
-x-parameter-model: true
 ----
 |[source,yaml]
 ----
@@ -63,8 +61,6 @@ Authorization:
   schema:
     type: string
   required: true
-  x-parameter-version: 1.2
-  x-parameter-model: true
 ----
 |===
 

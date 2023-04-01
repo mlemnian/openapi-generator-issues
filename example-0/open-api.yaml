@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  license: 
+  license:
     name: Apache License Version 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.txt
   title: Swagger API Definition - backend-service - v1
@@ -45,16 +45,6 @@ paths:
           $ref: "#/components/responses/501"
         503:
           $ref: "#/components/responses/503"
-      x-unitTests: []
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
-      x-endpoint-version: 1
-      x-endpoint-logic: true
 components:
   responses:
     paged_stuff:
@@ -146,8 +136,6 @@ components:
           type: integer
           format: int32
           example: 1564
-      x-object-version: 1.0
-      x-object-model: true
     stuff_ov1:
       title: stuff
       description: Several information about the stuff according to stuff_id
@@ -200,8 +188,6 @@ components:
               description: Country code according to ISO 3166-1 alpha-3
               type: string
               example: DEU
-      x-object-version: 1.0
-      x-object-model: true
     error_code_ov1_2:
       $ref: "./shared-api-spec/components/schemas/error_code/ov1.2.yaml"
   parameters:

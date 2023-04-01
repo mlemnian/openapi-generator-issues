@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  license: 
+  license:
     name: Apache License Version 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.txt
   title: Swagger API Definition - backend-service - v1
@@ -45,16 +45,6 @@ paths:
           $ref: "#/components/responses/501"
         503:
           $ref: "#/components/responses/503"
-      x-unitTests: []
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-auth-type: Application & Application User
-      x-throttling-tier: Unlimited
-      x-endpoint-version: 1
-      x-endpoint-logic: true
 components:
   responses:
     paged_stuff:

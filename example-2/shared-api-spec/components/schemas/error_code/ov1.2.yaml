@@ -25,5 +25,3 @@ required:
   - title
   - status
   - detail
-x-object-version: 1.2
-x-object-model: true

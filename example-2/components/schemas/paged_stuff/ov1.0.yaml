@@ -22,5 +22,3 @@ properties:
     type: integer
     format: int32
     example: 1564
-x-object-version: 1.0
-x-object-model: true
