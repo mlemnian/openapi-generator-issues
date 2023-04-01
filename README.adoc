@@ -3,6 +3,8 @@
 This repository was created to collect multiple different scenarios in which the `org.openapitools:openapi-generator-maven-plugin:6.5.0` does have problems
 generating code from a valid OAS 3.0.1 file because of referencing multiple external files.
 
+See https://github.com/OpenAPITools/openapi-generator/issues/15104.
+
 The baseline api is the following open-api file from example-0/open-api.yaml:
 
 [source,yaml]
@@ -20,7 +22,7 @@ The following example apis should create exactly the same result:
 * `example-4`
 * `example-5`
 
-`example-3` only defines `#/components/schemas/paged_stuff_ov1_0` and `#/components/schemas/stuff_ov1_0` inline.
+`example-3` only defines `#/components/schemas/paged_stuff_ov1_0` and `#/components/schemas/stuff_ov1_0` is inline defined.
 
 `example-6` is a more simplified version of `example-5` to make debugging easier.
 
