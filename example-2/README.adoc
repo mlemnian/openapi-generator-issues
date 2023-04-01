@@ -87,7 +87,7 @@ Authorization:
 
 image::vs-code.jpg[]
 
-even though the schema for "stuff" is not rendered directly.
+even though the schema for "stuff" is not rendered directly. This minor issue will be addressed in the example-3.
 
 === Negative
 
