@@ -5,22 +5,22 @@ There is one open-api.yaml file that references four parameters, two schemas and
 [source]
 ----
 open-api.yaml
-|-- $ref: "#/components/parameters/Authorization"
-|   `-- $ref: "./shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml"
+|-- $ref: '#/components/parameters/Authorization'
+|   `-- $ref: './shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml'
 |
-|-- $ref: "#/components/parameters/limit"
-|   `-- $ref: "./shared-api-spec/components/parameters/query/limit/pv1.2.yaml"
+|-- $ref: '#/components/parameters/limit'
+|   `-- $ref: './shared-api-spec/components/parameters/query/limit/pv1.2.yaml'
 |
-|-- $ref: "#/components/parameters/offset"
-|   `-- $ref: "./shared-api-spec/components/parameters/query/offset/pv1.2.yaml"
+|-- $ref: '#/components/parameters/offset'
+|   `-- $ref: './shared-api-spec/components/parameters/query/offset/pv1.2.yaml'
 |
-|-- $ref: "#/components/parameters/partial_stuff_name"
+|-- $ref: '#/components/parameters/partial_stuff_name'
 |
 |-- $ref: #/components/schemas/paged_stuff_ov1_0
-|   `-- $ref: "#/components/schemas/stuff_ov1"
-|       `-- $ref: "./shared-api-spec/attributes/city/ov1.3.yaml"
+|   `-- $ref: '#/components/schemas/stuff_ov1'
+|       `-- $ref: './shared-api-spec/attributes/city/ov1.3.yaml'
 |
-`-- $ref: "#/components/schemas/error_code_ov1_2"
+`-- $ref: '#/components/schemas/error_code_ov1_2'
     `-- $ref: ./shared-api-spec/components/schemas/error_code/ov1.2.yaml
 ----
 
@@ -31,7 +31,7 @@ The three parameters are referenced like
 components:
   parameters:
     {PARAMETER_NAME}:
-      $ref: "./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml"
+      $ref: './shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml'
 ----
 and the `./shared-api-spec/components/parameters/header/{PARAMETER_NAME}/pv1.x.yaml` files are just plain YAMLs e.g.:
 

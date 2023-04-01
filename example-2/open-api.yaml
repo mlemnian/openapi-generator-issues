@@ -22,29 +22,29 @@ paths:
         on partial_name.
       operationId: return_stuff_ov1_0
       parameters:
-        - $ref: "#/components/parameters/Authorization"
-        - $ref: "#/components/parameters/limit"
-        - $ref: "#/components/parameters/offset"
-        - $ref: "#/components/parameters/partial_stuff_name"
+        - $ref: '#/components/parameters/Authorization'
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/partial_stuff_name'
       responses:
         200:
-          $ref: "#/components/responses/paged_stuff"
+          $ref: '#/components/responses/paged_stuff'
         400:
-          $ref: "#/components/responses/400"
+          $ref: '#/components/responses/400'
         401:
-          $ref: "#/components/responses/401"
+          $ref: '#/components/responses/401'
         403:
-          $ref: "#/components/responses/403"
+          $ref: '#/components/responses/403'
         408:
-          $ref: "#/components/responses/408"
+          $ref: '#/components/responses/408'
         429:
-          $ref: "#/components/responses/429"
+          $ref: '#/components/responses/429'
         500:
-          $ref: "#/components/responses/500"
+          $ref: '#/components/responses/500'
         501:
-          $ref: "#/components/responses/501"
+          $ref: '#/components/responses/501'
         503:
-          $ref: "#/components/responses/503"
+          $ref: '#/components/responses/503'
 components:
   responses:
     paged_stuff:
@@ -112,16 +112,16 @@ components:
             $ref: '#/components/schemas/error_code_ov1_2'
   schemas:
     paged_stuff_ov1_0:
-      $ref: "./components/schemas/paged_stuff/ov1.0.yaml"
+      $ref: './components/schemas/paged_stuff/ov1.0.yaml'
     error_code_ov1_2:
-      $ref: "./shared-api-spec/components/schemas/error_code/ov1.2.yaml"
+      $ref: './shared-api-spec/components/schemas/error_code/ov1.2.yaml'
   parameters:
     Authorization:
-      $ref: "./shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml#/Authorization"
+      $ref: './shared-api-spec/components/parameters/header/Authorization/pv1.2.yaml#/Authorization'
     offset:
-      $ref: "./shared-api-spec/components/parameters/query/offset/pv1.2.yaml#/offset"
+      $ref: './shared-api-spec/components/parameters/query/offset/pv1.2.yaml#/offset'
     limit:
-      $ref: "./shared-api-spec/components/parameters/query/limit/pv1.2.yaml#/limit"
+      $ref: './shared-api-spec/components/parameters/query/limit/pv1.2.yaml#/limit'
     partial_stuff_name:
       name: partial_stuff_name
       in: query
