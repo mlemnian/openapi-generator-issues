@@ -92,12 +92,19 @@
 
 
     <modules>
-        <module>example-0</module>
-        <module>example-1</module>
-        <module>example-2</module>
-        <module>example-3</module>
-        <module>example-4</module>
-        <module>example-5</module>
-        <module>example-6</module>
+        <module>open-api-3.0.1/example-0</module>
+        <module>open-api-3.0.1/example-1</module>
+        <module>open-api-3.0.1/example-2</module>
+        <module>open-api-3.0.1/example-3</module>
+        <module>open-api-3.0.1/example-4</module>
+        <module>open-api-3.0.1/example-5</module>
+        <module>open-api-3.0.1/example-6</module>
+        <module>open-api-3.0.3/example-0</module>
+        <module>open-api-3.0.3/example-1</module>
+        <module>open-api-3.0.3/example-2</module>
+        <module>open-api-3.0.3/example-3</module>
+        <module>open-api-3.0.3/example-4</module>
+        <module>open-api-3.0.3/example-5</module>
+        <module>open-api-3.0.3/example-6</module>
     </modules>
 </project>

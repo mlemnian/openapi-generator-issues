@@ -17,15 +17,21 @@ which does not contain any references!
 
 The following example apis should create exactly the same result:
 
-* `example-0`
-* `example-1`
-* `example-2`
-* `example-4`
-* `example-5`
+* `open-api-3.0.1/example-0`
+* `open-api-3.0.1/example-1`
+* `open-api-3.0.1/example-2`
+* `open-api-3.0.1/example-4`
+* `open-api-3.0.1/example-5`
 
-`example-3` only defines `#/components/schemas/paged_stuff_ov1_0` and `#/components/schemas/stuff_ov1_0` is inline defined.
+* `open-api-3.0.3/example-0`
+* `open-api-3.0.3/example-1`
+* `open-api-3.0.3/example-2`
+* `open-api-3.0.3/example-4`
+* `open-api-3.0.3/example-5`
 
-`example-6` is a more simplified version of `example-5` to make debugging easier.
+`*/example-3` only defines `#/components/schemas/paged_stuff_ov1_0` and `#/components/schemas/stuff_ov1_0` is inline defined.
+
+`*/example-6` is a more simplified version of `example-5` to make debugging easier.
 
 == How to build
 
@@ -38,6 +44,9 @@ The following example apis should create exactly the same result:
 
 The following examples fail to build, even though the API is correct:
 
-* example-1
-* example-5
-* example-6
+* `open-api-3.0.1/example-1`
+* `open-api-3.0.1/example-5`
+* `open-api-3.0.1/example-6`
+* `open-api-3.0.3/example-1`
+* `open-api-3.0.3/example-5`
+* `open-api-3.0.3/example-6`

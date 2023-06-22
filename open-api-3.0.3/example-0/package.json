@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@redocly/cli": "^1.0.0-beta.124",
+    "swagger-merger": "^1.5.4"
+  },
+  "scripts": {
+    "test": "redocly lint open-api.yaml"
+  }
+}
