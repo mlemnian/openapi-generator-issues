@@ -1,6 +1,7 @@
 = Purpose
 
-This repository was created to collect multiple different scenarios in which the `org.openapitools:openapi-generator-maven-plugin:6.5.0` does have problems
+This repository was created to collect multiple different scenarios in which the `org.openapitools:openapi-generator-maven-plugin:6.5.0` and 
+`org.openapitools:openapi-generator-maven-plugin:6.6.0` does have problems
 generating code from a valid OAS 3.0.1 file because of referencing multiple external files.
 
 See https://github.com/OpenAPITools/openapi-generator/issues/15104.
